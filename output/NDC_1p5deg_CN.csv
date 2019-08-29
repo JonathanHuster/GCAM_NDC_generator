@@ -1,0 +1,530 @@
+INPUT_TABLE
+Variable ID
+GHGConstrLong
+
+"region","ghgpolicy","market","year","value"
+"Africa_Eastern","GHG","Africa_Eastern",2020,669.535153750922
+"Africa_Eastern","GHG","Africa_Eastern",2025,630.116958071245
+"Africa_Eastern","GHG","Africa_Eastern",2030,590.698762391569
+"Africa_Eastern","GHG","Africa_Eastern",2035,444.274071793676
+"Africa_Eastern","GHG","Africa_Eastern",2040,297.849381195784
+"Africa_Eastern","GHG","Africa_Eastern",2045,151.424690597892
+"Africa_Eastern","GHG","Africa_Eastern",2050,5
+"Africa_Eastern","GHG","Africa_Eastern",2055,5
+"Africa_Eastern","GHG","Africa_Eastern",2060,5
+"Africa_Eastern","GHG","Africa_Eastern",2065,5
+"Africa_Eastern","GHG","Africa_Eastern",2070,5
+"Africa_Eastern","GHG","Africa_Eastern",2075,5
+"Africa_Eastern","GHG","Africa_Eastern",2080,5
+"Africa_Eastern","GHG","Africa_Eastern",2085,5
+"Africa_Eastern","GHG","Africa_Eastern",2090,5
+"Africa_Eastern","GHG","Africa_Eastern",2095,5
+"Africa_Eastern","GHG","Africa_Eastern",2100,5
+"Africa_Northern","GHG","Africa_Northern",2020,876.90153266099
+"Africa_Northern","GHG","Africa_Northern",2025,970.376816220869
+"Africa_Northern","GHG","Africa_Northern",2030,1063.85209978075
+"Africa_Northern","GHG","Africa_Northern",2035,799.139074835561
+"Africa_Northern","GHG","Africa_Northern",2040,534.426049890374
+"Africa_Northern","GHG","Africa_Northern",2045,269.713024945187
+"Africa_Northern","GHG","Africa_Northern",2050,5
+"Africa_Northern","GHG","Africa_Northern",2055,5
+"Africa_Northern","GHG","Africa_Northern",2060,5
+"Africa_Northern","GHG","Africa_Northern",2065,5
+"Africa_Northern","GHG","Africa_Northern",2070,5
+"Africa_Northern","GHG","Africa_Northern",2075,5
+"Africa_Northern","GHG","Africa_Northern",2080,5
+"Africa_Northern","GHG","Africa_Northern",2085,5
+"Africa_Northern","GHG","Africa_Northern",2090,5
+"Africa_Northern","GHG","Africa_Northern",2095,5
+"Africa_Northern","GHG","Africa_Northern",2100,5
+"Africa_Southern","GHG","Africa_Southern",2020,522.846840585968
+"Africa_Southern","GHG","Africa_Southern",2025,489.891576782008
+"Africa_Southern","GHG","Africa_Southern",2030,456.936312978048
+"Africa_Southern","GHG","Africa_Southern",2035,343.952234733536
+"Africa_Southern","GHG","Africa_Southern",2040,230.968156489024
+"Africa_Southern","GHG","Africa_Southern",2045,117.984078244512
+"Africa_Southern","GHG","Africa_Southern",2050,5
+"Africa_Southern","GHG","Africa_Southern",2055,5
+"Africa_Southern","GHG","Africa_Southern",2060,5
+"Africa_Southern","GHG","Africa_Southern",2065,5
+"Africa_Southern","GHG","Africa_Southern",2070,5
+"Africa_Southern","GHG","Africa_Southern",2075,5
+"Africa_Southern","GHG","Africa_Southern",2080,5
+"Africa_Southern","GHG","Africa_Southern",2085,5
+"Africa_Southern","GHG","Africa_Southern",2090,5
+"Africa_Southern","GHG","Africa_Southern",2095,5
+"Africa_Southern","GHG","Africa_Southern",2100,5
+"Africa_Western","GHG","Africa_Western",2020,1020.05922226832
+"Africa_Western","GHG","Africa_Western",2025,834.715791907752
+"Africa_Western","GHG","Africa_Western",2030,649.372361547187
+"Africa_Western","GHG","Africa_Western",2035,488.27927116039
+"Africa_Western","GHG","Africa_Western",2040,327.186180773594
+"Africa_Western","GHG","Africa_Western",2045,166.093090386797
+"Africa_Western","GHG","Africa_Western",2050,5
+"Africa_Western","GHG","Africa_Western",2055,5
+"Africa_Western","GHG","Africa_Western",2060,5
+"Africa_Western","GHG","Africa_Western",2065,5
+"Africa_Western","GHG","Africa_Western",2070,5
+"Africa_Western","GHG","Africa_Western",2075,5
+"Africa_Western","GHG","Africa_Western",2080,5
+"Africa_Western","GHG","Africa_Western",2085,5
+"Africa_Western","GHG","Africa_Western",2090,5
+"Africa_Western","GHG","Africa_Western",2095,5
+"Africa_Western","GHG","Africa_Western",2100,5
+"Argentina","GHG","Argentina",2020,398.529059818511
+"Argentina","GHG","Argentina",2025,378.814529909255
+"Argentina","GHG","Argentina",2030,359.1
+"Argentina","GHG","Argentina",2035,270.575
+"Argentina","GHG","Argentina",2040,182.05
+"Argentina","GHG","Argentina",2045,93.525
+"Argentina","GHG","Argentina",2050,5
+"Argentina","GHG","Argentina",2055,5
+"Argentina","GHG","Argentina",2060,5
+"Argentina","GHG","Argentina",2065,5
+"Argentina","GHG","Argentina",2070,5
+"Argentina","GHG","Argentina",2075,5
+"Argentina","GHG","Argentina",2080,5
+"Argentina","GHG","Argentina",2085,5
+"Argentina","GHG","Argentina",2090,5
+"Argentina","GHG","Argentina",2095,5
+"Argentina","GHG","Argentina",2100,5
+"Australia_NZ","GHG","Australia_NZ",2020,499
+"Australia_NZ","GHG","Australia_NZ",2025,463.817
+"Australia_NZ","GHG","Australia_NZ",2030,428.634
+"Australia_NZ","GHG","Australia_NZ",2035,322.7255
+"Australia_NZ","GHG","Australia_NZ",2040,216.817
+"Australia_NZ","GHG","Australia_NZ",2045,110.9085
+"Australia_NZ","GHG","Australia_NZ",2050,5
+"Australia_NZ","GHG","Australia_NZ",2055,5
+"Australia_NZ","GHG","Australia_NZ",2060,5
+"Australia_NZ","GHG","Australia_NZ",2065,5
+"Australia_NZ","GHG","Australia_NZ",2070,5
+"Australia_NZ","GHG","Australia_NZ",2075,5
+"Australia_NZ","GHG","Australia_NZ",2080,5
+"Australia_NZ","GHG","Australia_NZ",2085,5
+"Australia_NZ","GHG","Australia_NZ",2090,5
+"Australia_NZ","GHG","Australia_NZ",2095,5
+"Australia_NZ","GHG","Australia_NZ",2100,5
+"Brazil","GHG","Brazil",2020,1600.9510127949
+"Brazil","GHG","Brazil",2025,1323
+"Brazil","GHG","Brazil",2030,1197
+"Brazil","GHG","Brazil",2035,899
+"Brazil","GHG","Brazil",2040,601
+"Brazil","GHG","Brazil",2045,303
+"Brazil","GHG","Brazil",2050,5
+"Brazil","GHG","Brazil",2055,5
+"Brazil","GHG","Brazil",2060,5
+"Brazil","GHG","Brazil",2065,5
+"Brazil","GHG","Brazil",2070,5
+"Brazil","GHG","Brazil",2075,5
+"Brazil","GHG","Brazil",2080,5
+"Brazil","GHG","Brazil",2085,5
+"Brazil","GHG","Brazil",2090,5
+"Brazil","GHG","Brazil",2095,5
+"Brazil","GHG","Brazil",2100,5
+"Canada","GHG","Canada",2020,655.7
+"Canada","GHG","Canada",2025,604.08435
+"Canada","GHG","Canada",2030,552.4687
+"Canada","GHG","Canada",2035,415.601525
+"Canada","GHG","Canada",2040,278.73435
+"Canada","GHG","Canada",2045,141.867175
+"Canada","GHG","Canada",2050,5
+"Canada","GHG","Canada",2055,5
+"Canada","GHG","Canada",2060,5
+"Canada","GHG","Canada",2065,5
+"Canada","GHG","Canada",2070,5
+"Canada","GHG","Canada",2075,5
+"Canada","GHG","Canada",2080,5
+"Canada","GHG","Canada",2085,5
+"Canada","GHG","Canada",2090,5
+"Canada","GHG","Canada",2095,5
+"Canada","GHG","Canada",2100,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2020,414.563506441618
+"Central America and Caribbean","GHG","Central America and Caribbean",2025,436.753993787485
+"Central America and Caribbean","GHG","Central America and Caribbean",2030,458.944481133353
+"Central America and Caribbean","GHG","Central America and Caribbean",2035,345.458360850015
+"Central America and Caribbean","GHG","Central America and Caribbean",2040,231.972240566676
+"Central America and Caribbean","GHG","Central America and Caribbean",2045,118.486120283338
+"Central America and Caribbean","GHG","Central America and Caribbean",2050,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2055,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2060,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2065,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2070,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2075,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2080,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2085,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2090,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2095,5
+"Central America and Caribbean","GHG","Central America and Caribbean",2100,5
+"Central Asia","GHG","Central Asia",2020,898.131384960835
+"Central Asia","GHG","Central Asia",2025,900.266562242026
+"Central Asia","GHG","Central Asia",2030,902.401739523217
+"Central Asia","GHG","Central Asia",2035,678.051304642413
+"Central Asia","GHG","Central Asia",2040,453.700869761609
+"Central Asia","GHG","Central Asia",2045,229.350434880804
+"Central Asia","GHG","Central Asia",2050,5
+"Central Asia","GHG","Central Asia",2055,5
+"Central Asia","GHG","Central Asia",2060,5
+"Central Asia","GHG","Central Asia",2065,5
+"Central Asia","GHG","Central Asia",2070,5
+"Central Asia","GHG","Central Asia",2075,5
+"Central Asia","GHG","Central Asia",2080,5
+"Central Asia","GHG","Central Asia",2085,5
+"Central Asia","GHG","Central Asia",2090,5
+"Central Asia","GHG","Central Asia",2095,5
+"Central Asia","GHG","Central Asia",2100,5
+"China","GHG","China",2020,11130.54
+"China","GHG","China",2025,13815.2816402889
+"China","GHG","China",2030,16500.0232805778
+"China","GHG","China",2035,12376.2674604333
+"China","GHG","China",2040,8252.51164028888
+"China","GHG","China",2045,4128.75582014444
+"China","GHG","China",2050,5
+"China","GHG","China",2055,5
+"China","GHG","China",2060,5
+"China","GHG","China",2065,5
+"China","GHG","China",2070,5
+"China","GHG","China",2075,5
+"China","GHG","China",2080,5
+"China","GHG","China",2085,5
+"China","GHG","China",2090,5
+"China","GHG","China",2095,5
+"China","GHG","China",2100,5
+"Colombia","GHG","Colombia",2020,246.207386067032
+"Colombia","GHG","Colombia",2025,240.353693033516
+"Colombia","GHG","Colombia",2030,234.5
+"Colombia","GHG","Colombia",2035,177.125
+"Colombia","GHG","Colombia",2040,119.75
+"Colombia","GHG","Colombia",2045,62.375
+"Colombia","GHG","Colombia",2050,5
+"Colombia","GHG","Colombia",2055,5
+"Colombia","GHG","Colombia",2060,5
+"Colombia","GHG","Colombia",2065,5
+"Colombia","GHG","Colombia",2070,5
+"Colombia","GHG","Colombia",2075,5
+"Colombia","GHG","Colombia",2080,5
+"Colombia","GHG","Colombia",2085,5
+"Colombia","GHG","Colombia",2090,5
+"Colombia","GHG","Colombia",2095,5
+"Colombia","GHG","Colombia",2100,5
+"EU-12","GHG","EU",2020,4204.5
+"EU-12","GHG","EU",2025,3784.1352
+"EU-12","GHG","EU",2030,3363.7704
+"EU-12","GHG","EU",2035,2524.0778
+"EU-12","GHG","EU",2040,1684.3852
+"EU-12","GHG","EU",2045,844.6926
+"EU-12","GHG","EU",2050,5
+"EU-12","GHG","EU",2055,5
+"EU-12","GHG","EU",2060,5
+"EU-12","GHG","EU",2065,5
+"EU-12","GHG","EU",2070,5
+"EU-12","GHG","EU",2075,5
+"EU-12","GHG","EU",2080,5
+"EU-12","GHG","EU",2085,5
+"EU-12","GHG","EU",2090,5
+"EU-12","GHG","EU",2095,5
+"EU-12","GHG","EU",2100,5
+"Europe_Eastern","GHG","Europe_Eastern",2020,728.763981621621
+"Europe_Eastern","GHG","Europe_Eastern",2025,631.014953842
+"Europe_Eastern","GHG","Europe_Eastern",2030,533.265926062378
+"Europe_Eastern","GHG","Europe_Eastern",2035,401.199444546784
+"Europe_Eastern","GHG","Europe_Eastern",2040,269.132963031189
+"Europe_Eastern","GHG","Europe_Eastern",2045,137.066481515595
+"Europe_Eastern","GHG","Europe_Eastern",2050,5
+"Europe_Eastern","GHG","Europe_Eastern",2055,5
+"Europe_Eastern","GHG","Europe_Eastern",2060,5
+"Europe_Eastern","GHG","Europe_Eastern",2065,5
+"Europe_Eastern","GHG","Europe_Eastern",2070,5
+"Europe_Eastern","GHG","Europe_Eastern",2075,5
+"Europe_Eastern","GHG","Europe_Eastern",2080,5
+"Europe_Eastern","GHG","Europe_Eastern",2085,5
+"Europe_Eastern","GHG","Europe_Eastern",2090,5
+"Europe_Eastern","GHG","Europe_Eastern",2095,5
+"Europe_Eastern","GHG","Europe_Eastern",2100,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2020,687.093269797649
+"Europe_Non_EU","GHG","Europe_Non_EU",2025,622.421157995195
+"Europe_Non_EU","GHG","Europe_Non_EU",2030,557.749046192741
+"Europe_Non_EU","GHG","Europe_Non_EU",2035,419.561784644556
+"Europe_Non_EU","GHG","Europe_Non_EU",2040,281.37452309637
+"Europe_Non_EU","GHG","Europe_Non_EU",2045,143.187261548185
+"Europe_Non_EU","GHG","Europe_Non_EU",2050,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2055,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2060,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2065,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2070,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2075,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2080,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2085,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2090,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2095,5
+"Europe_Non_EU","GHG","Europe_Non_EU",2100,5
+"European Free Trade Association","GHG","European Free Trade Association",2020,95.98
+"European Free Trade Association","GHG","European Free Trade Association",2025,100.032422604159
+"European Free Trade Association","GHG","European Free Trade Association",2030,104.084845208318
+"European Free Trade Association","GHG","European Free Trade Association",2035,79.3136339062382
+"European Free Trade Association","GHG","European Free Trade Association",2040,54.5424226041588
+"European Free Trade Association","GHG","European Free Trade Association",2045,29.7712113020794
+"European Free Trade Association","GHG","European Free Trade Association",2050,5
+"European Free Trade Association","GHG","European Free Trade Association",2055,5
+"European Free Trade Association","GHG","European Free Trade Association",2060,5
+"European Free Trade Association","GHG","European Free Trade Association",2065,5
+"European Free Trade Association","GHG","European Free Trade Association",2070,5
+"European Free Trade Association","GHG","European Free Trade Association",2075,5
+"European Free Trade Association","GHG","European Free Trade Association",2080,5
+"European Free Trade Association","GHG","European Free Trade Association",2085,5
+"European Free Trade Association","GHG","European Free Trade Association",2090,5
+"European Free Trade Association","GHG","European Free Trade Association",2095,5
+"European Free Trade Association","GHG","European Free Trade Association",2100,5
+"India","GHG","India",2020,3862
+"India","GHG","India",2025,5918.69218212282
+"India","GHG","India",2030,7975.38436424564
+"India","GHG","India",2035,5982.78827318423
+"India","GHG","India",2040,3990.19218212282
+"India","GHG","India",2045,1997.59609106141
+"India","GHG","India",2050,5
+"India","GHG","India",2055,5
+"India","GHG","India",2060,5
+"India","GHG","India",2065,5
+"India","GHG","India",2070,5
+"India","GHG","India",2075,5
+"India","GHG","India",2080,5
+"India","GHG","India",2085,5
+"India","GHG","India",2090,5
+"India","GHG","India",2095,5
+"India","GHG","India",2100,5
+"Indonesia","GHG","Indonesia",2020,1213.27924302805
+"Indonesia","GHG","Indonesia",2025,1456.53462151403
+"Indonesia","GHG","Indonesia",2030,1699.79
+"Indonesia","GHG","Indonesia",2035,1276.0925
+"Indonesia","GHG","Indonesia",2040,852.395
+"Indonesia","GHG","Indonesia",2045,428.6975
+"Indonesia","GHG","Indonesia",2050,5
+"Indonesia","GHG","Indonesia",2055,5
+"Indonesia","GHG","Indonesia",2060,5
+"Indonesia","GHG","Indonesia",2065,5
+"Indonesia","GHG","Indonesia",2070,5
+"Indonesia","GHG","Indonesia",2075,5
+"Indonesia","GHG","Indonesia",2080,5
+"Indonesia","GHG","Indonesia",2085,5
+"Indonesia","GHG","Indonesia",2090,5
+"Indonesia","GHG","Indonesia",2095,5
+"Indonesia","GHG","Indonesia",2100,5
+"Japan","GHG","Japan",2020,1241.66
+"Japan","GHG","Japan",2025,1141.79
+"Japan","GHG","Japan",2030,1041.92
+"Japan","GHG","Japan",2035,782.69
+"Japan","GHG","Japan",2040,523.46
+"Japan","GHG","Japan",2045,264.23
+"Japan","GHG","Japan",2050,5
+"Japan","GHG","Japan",2055,5
+"Japan","GHG","Japan",2060,5
+"Japan","GHG","Japan",2065,5
+"Japan","GHG","Japan",2070,5
+"Japan","GHG","Japan",2075,5
+"Japan","GHG","Japan",2080,5
+"Japan","GHG","Japan",2085,5
+"Japan","GHG","Japan",2090,5
+"Japan","GHG","Japan",2095,5
+"Japan","GHG","Japan",2100,5
+"Mexico","GHG","Mexico",2020,554.4
+"Mexico","GHG","Mexico",2025,588.56
+"Mexico","GHG","Mexico",2030,622.72
+"Mexico","GHG","Mexico",2035,468.29
+"Mexico","GHG","Mexico",2040,313.86
+"Mexico","GHG","Mexico",2045,159.43
+"Mexico","GHG","Mexico",2050,5
+"Mexico","GHG","Mexico",2055,5
+"Mexico","GHG","Mexico",2060,5
+"Mexico","GHG","Mexico",2065,5
+"Mexico","GHG","Mexico",2070,5
+"Mexico","GHG","Mexico",2075,5
+"Mexico","GHG","Mexico",2080,5
+"Mexico","GHG","Mexico",2085,5
+"Mexico","GHG","Mexico",2090,5
+"Mexico","GHG","Mexico",2095,5
+"Mexico","GHG","Mexico",2100,5
+"Middle East","GHG","Middle East",2020,2593.3549243377
+"Middle East","GHG","Middle East",2025,2864.28383498992
+"Middle East","GHG","Middle East",2030,3135.21274564215
+"Middle East","GHG","Middle East",2035,2352.65955923161
+"Middle East","GHG","Middle East",2040,1570.10637282107
+"Middle East","GHG","Middle East",2045,787.553186410537
+"Middle East","GHG","Middle East",2050,5
+"Middle East","GHG","Middle East",2055,5
+"Middle East","GHG","Middle East",2060,5
+"Middle East","GHG","Middle East",2065,5
+"Middle East","GHG","Middle East",2070,5
+"Middle East","GHG","Middle East",2075,5
+"Middle East","GHG","Middle East",2080,5
+"Middle East","GHG","Middle East",2085,5
+"Middle East","GHG","Middle East",2090,5
+"Middle East","GHG","Middle East",2095,5
+"Middle East","GHG","Middle East",2100,5
+"Pakistan","GHG","Pakistan",2035,509.392764191461
+"Pakistan","GHG","Pakistan",2040,341.261842794307
+"Pakistan","GHG","Pakistan",2045,173.130921397154
+"Pakistan","GHG","Pakistan",2050,5
+"Pakistan","GHG","Pakistan",2055,5
+"Pakistan","GHG","Pakistan",2060,5
+"Pakistan","GHG","Pakistan",2065,5
+"Pakistan","GHG","Pakistan",2070,5
+"Pakistan","GHG","Pakistan",2075,5
+"Pakistan","GHG","Pakistan",2080,5
+"Pakistan","GHG","Pakistan",2085,5
+"Pakistan","GHG","Pakistan",2090,5
+"Pakistan","GHG","Pakistan",2095,5
+"Pakistan","GHG","Pakistan",2100,5
+"Russia","GHG","Russia",2020,2701.67597252257
+"Russia","GHG","Russia",2025,2587.16118626129
+"Russia","GHG","Russia",2030,2472.6464
+"Russia","GHG","Russia",2035,1855.7348
+"Russia","GHG","Russia",2040,1238.8232
+"Russia","GHG","Russia",2045,621.9116
+"Russia","GHG","Russia",2050,5
+"Russia","GHG","Russia",2055,5
+"Russia","GHG","Russia",2060,5
+"Russia","GHG","Russia",2065,5
+"Russia","GHG","Russia",2070,5
+"Russia","GHG","Russia",2075,5
+"Russia","GHG","Russia",2080,5
+"Russia","GHG","Russia",2085,5
+"Russia","GHG","Russia",2090,5
+"Russia","GHG","Russia",2095,5
+"Russia","GHG","Russia",2100,5
+"South Africa","GHG","South Africa",2020,496.32
+"South Africa","GHG","South Africa",2025,447.71
+"South Africa","GHG","South Africa",2030,399.1
+"South Africa","GHG","South Africa",2035,300.575
+"South Africa","GHG","South Africa",2040,202.05
+"South Africa","GHG","South Africa",2045,103.525
+"South Africa","GHG","South Africa",2050,5
+"South Africa","GHG","South Africa",2055,5
+"South Africa","GHG","South Africa",2060,5
+"South Africa","GHG","South Africa",2065,5
+"South Africa","GHG","South Africa",2070,5
+"South Africa","GHG","South Africa",2075,5
+"South Africa","GHG","South Africa",2080,5
+"South Africa","GHG","South Africa",2085,5
+"South Africa","GHG","South Africa",2090,5
+"South Africa","GHG","South Africa",2095,5
+"South Africa","GHG","South Africa",2100,5
+"South America_Northern","GHG","South America_Northern",2035,304.155372323949
+"South America_Northern","GHG","South America_Northern",2040,204.436914882633
+"South America_Northern","GHG","South America_Northern",2045,104.718457441316
+"South America_Northern","GHG","South America_Northern",2050,5
+"South America_Northern","GHG","South America_Northern",2055,5
+"South America_Northern","GHG","South America_Northern",2060,5
+"South America_Northern","GHG","South America_Northern",2065,5
+"South America_Northern","GHG","South America_Northern",2070,5
+"South America_Northern","GHG","South America_Northern",2075,5
+"South America_Northern","GHG","South America_Northern",2080,5
+"South America_Northern","GHG","South America_Northern",2085,5
+"South America_Northern","GHG","South America_Northern",2090,5
+"South America_Northern","GHG","South America_Northern",2095,5
+"South America_Northern","GHG","South America_Northern",2100,5
+"South America_Southern","GHG","South America_Southern",2020,576.991676296125
+"South America_Southern","GHG","South America_Southern",2025,533.799346802033
+"South America_Southern","GHG","South America_Southern",2030,490.607017307941
+"South America_Southern","GHG","South America_Southern",2035,369.205262980956
+"South America_Southern","GHG","South America_Southern",2040,247.803508653971
+"South America_Southern","GHG","South America_Southern",2045,126.401754326985
+"South America_Southern","GHG","South America_Southern",2050,5
+"South America_Southern","GHG","South America_Southern",2055,5
+"South America_Southern","GHG","South America_Southern",2060,5
+"South America_Southern","GHG","South America_Southern",2065,5
+"South America_Southern","GHG","South America_Southern",2070,5
+"South America_Southern","GHG","South America_Southern",2075,5
+"South America_Southern","GHG","South America_Southern",2080,5
+"South America_Southern","GHG","South America_Southern",2085,5
+"South America_Southern","GHG","South America_Southern",2090,5
+"South America_Southern","GHG","South America_Southern",2095,5
+"South America_Southern","GHG","South America_Southern",2100,5
+"South Asia","GHG","South Asia",2020,450.620976007677
+"South Asia","GHG","South Asia",2025,516.524944877449
+"South Asia","GHG","South Asia",2030,582.428913747221
+"South Asia","GHG","South Asia",2035,438.071685310416
+"South Asia","GHG","South Asia",2040,293.71445687361
+"South Asia","GHG","South Asia",2045,149.357228436805
+"South Asia","GHG","South Asia",2050,5
+"South Asia","GHG","South Asia",2055,5
+"South Asia","GHG","South Asia",2060,5
+"South Asia","GHG","South Asia",2065,5
+"South Asia","GHG","South Asia",2070,5
+"South Asia","GHG","South Asia",2075,5
+"South Asia","GHG","South Asia",2080,5
+"South Asia","GHG","South Asia",2085,5
+"South Asia","GHG","South Asia",2090,5
+"South Asia","GHG","South Asia",2095,5
+"South Asia","GHG","South Asia",2100,5
+"South Korea","GHG","South Korea",2020,547.75
+"South Korea","GHG","South Korea",2025,541.814
+"South Korea","GHG","South Korea",2030,535.878
+"South Korea","GHG","South Korea",2035,403.1585
+"South Korea","GHG","South Korea",2040,270.439
+"South Korea","GHG","South Korea",2045,137.7195
+"South Korea","GHG","South Korea",2050,5
+"South Korea","GHG","South Korea",2055,5
+"South Korea","GHG","South Korea",2060,5
+"South Korea","GHG","South Korea",2065,5
+"South Korea","GHG","South Korea",2070,5
+"South Korea","GHG","South Korea",2075,5
+"South Korea","GHG","South Korea",2080,5
+"South Korea","GHG","South Korea",2085,5
+"South Korea","GHG","South Korea",2090,5
+"South Korea","GHG","South Korea",2095,5
+"South Korea","GHG","South Korea",2100,5
+"Southeast Asia","GHG","Southeast Asia",2020,2363.62148892542
+"Southeast Asia","GHG","Southeast Asia",2025,2106.63245272706
+"Southeast Asia","GHG","Southeast Asia",2030,1849.6434165287
+"Southeast Asia","GHG","Southeast Asia",2035,1388.48256239653
+"Southeast Asia","GHG","Southeast Asia",2040,927.321708264351
+"Southeast Asia","GHG","Southeast Asia",2045,466.160854132176
+"Southeast Asia","GHG","Southeast Asia",2050,5
+"Southeast Asia","GHG","Southeast Asia",2055,5
+"Southeast Asia","GHG","Southeast Asia",2060,5
+"Southeast Asia","GHG","Southeast Asia",2065,5
+"Southeast Asia","GHG","Southeast Asia",2070,5
+"Southeast Asia","GHG","Southeast Asia",2075,5
+"Southeast Asia","GHG","Southeast Asia",2080,5
+"Southeast Asia","GHG","Southeast Asia",2085,5
+"Southeast Asia","GHG","Southeast Asia",2090,5
+"Southeast Asia","GHG","Southeast Asia",2095,5
+"Southeast Asia","GHG","Southeast Asia",2100,5
+"Taiwan","GHG","Taiwan",2035,318.336141521438
+"Taiwan","GHG","Taiwan",2040,213.890761014292
+"Taiwan","GHG","Taiwan",2045,109.445380507146
+"Taiwan","GHG","Taiwan",2050,5
+"Taiwan","GHG","Taiwan",2055,5
+"Taiwan","GHG","Taiwan",2060,5
+"Taiwan","GHG","Taiwan",2065,5
+"Taiwan","GHG","Taiwan",2070,5
+"Taiwan","GHG","Taiwan",2075,5
+"Taiwan","GHG","Taiwan",2080,5
+"Taiwan","GHG","Taiwan",2085,5
+"Taiwan","GHG","Taiwan",2090,5
+"Taiwan","GHG","Taiwan",2095,5
+"Taiwan","GHG","Taiwan",2100,5
+"USA","GHG","USA",2020,5343.79
+"USA","GHG","USA",2025,4480.60608
+"USA","GHG","USA",2030,3886.56275348499
+"USA","GHG","USA",2035,2916.17206511374
+"USA","GHG","USA",2040,1945.78137674249
+"USA","GHG","USA",2045,975.390688371248
+"USA","GHG","USA",2050,5
+"USA","GHG","USA",2055,5
+"USA","GHG","USA",2060,5
+"USA","GHG","USA",2065,5
+"USA","GHG","USA",2070,5
+"USA","GHG","USA",2075,5
+"USA","GHG","USA",2080,5
+"USA","GHG","USA",2085,5
+"USA","GHG","USA",2090,5
+"USA","GHG","USA",2095,5
+"USA","GHG","USA",2100,5
+
+INPUT_TABLE
+Variable ID
+GHGConstrMkt
+
+region,ghgpolicy,market
+EU-15,GHG,EU
