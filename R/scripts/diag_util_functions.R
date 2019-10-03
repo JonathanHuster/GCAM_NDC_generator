@@ -41,7 +41,7 @@
 
 # -----------------------------------------------------------------------------
 # Get a table of GCAM output by title (or table number).
-extract_data <- function( t, fnum=-1 ) {
+extract_data <- function( t, tables, FILES, fnum=-1 ) {
     if(fnum != -1) {
         d <- tables[[ FILES[ fnum ] ]][[ t ]]
     } else {

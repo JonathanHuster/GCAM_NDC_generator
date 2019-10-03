@@ -97,9 +97,9 @@ save_single_graph <- function(  p=last_plot(),
         if( !file.exists( outputfolder ) ) dir.create( outputfolder )
         printlog( "Saving", graphfn )
         if( "save_args" %in% names( p ) ) {
-            do.call( ggsave, c(list(filename=paste( outputfolder, graphfn, sep="/" ), plot=p), p$save_args ) )
+            do.call( ggplot2::ggsave, c(list(filename=paste( outputfolder, graphfn, sep="/" ), plot=p), p$save_args ) )
         } else {
-            ggsave( paste( outputfolder, graphfn, sep="/" ) )
+          ggplot2::ggsave( paste( outputfolder, graphfn, sep="/" ) )
         }
         p[[ "filter_data" ]][[ "graphfn" ]] <- graphfn
     }
@@ -137,11 +137,11 @@ do_single_graph <- function(    p,      # a ggplot
         GCAM_MAPDATA[ TITLE_FIELD_NAME ] <- p$labels$fill
         GCAM_MAPDATA[ UNITS_FIELD_NAME ] <- p$data[ 1, UNITS_FIELD_NAME ]
 
-        newp <- ggplot( GCAM_MAPDATA, aes( long, lat, group=group  ) ) +
-                labs( x='Longitude', y='Latitude' ) + 
-                geom_polygon( aes( fill=filldata ) ) + geom_path( color='white' ) + 
-                ggtitle( p$labels$title ) +
-                scale_fill_continuous( p$data[ 1, TITLE_FIELD_NAME ] ) + coord_equal()
+        newp <- ggplot2::ggplot( GCAM_MAPDATA, aes( long, lat, group=group  ) ) +
+          ggplot2::labs( x='Longitude', y='Latitude' ) + 
+          ggplot2::geom_polygon( aes( fill=filldata ) ) + geom_path( color='white' ) + 
+          ggplot2::ggtitle( p$labels$title ) +
+          ggplot2::scale_fill_continuous( p$data[ 1, TITLE_FIELD_NAME ] ) + ggplot2::coord_equal()
         p <- add_to_title( newp, "map", p$data[ 1, TITLE_FIELD_NAME ] ) # overwrite
     }
     
@@ -149,9 +149,9 @@ do_single_graph <- function(    p,      # a ggplot
     items <- paste( unique( p$data[ TITLE_FIELD_NAME ] ), collapse=OUTPUT_FILENAME_SEP )
     p <- add_to_title( p, items )
     if( is.na( ylab ) ) {
-        p <- p + ylab( paste0( items, " (", paste( unique( p$data[ UNITS_FIELD_NAME ] ), collapse=" " ), ")" ) )
+        p <- p + ggplot2::ylab( paste0( items, " (", paste( unique( p$data[ UNITS_FIELD_NAME ] ), collapse=" " ), ")" ) )
     } else {
-        p <- p + ylab( ylab )
+        p <- p + ggplot2::ylab( ylab )
     }
     
     # -------------------- collect meta data on the plot
@@ -178,7 +178,7 @@ do_single_graph <- function(    p,      # a ggplot
             if( DISPLAY_EACH_GRAPH )    print( p )
         }, error=function( err ) {
             printlog( "Oops...error trying to generate this graph", level=LOGLEVEL_ERROR )
-            p <- qplot( 0, 0, label=paste( "ERROR", as.character( err ), sep="\n" ), geom="text", main=fn )
+            p <- ggplot2::qplot( 0, 0, label=paste( "ERROR", as.character( err ), sep="\n" ), geom="text", main=fn )
             errmsg <<- as.character( err )
             printlog( as.character( err ), level=LOGLEVEL_ERROR )
         }
@@ -211,7 +211,7 @@ do_graph <- function(   p,              # a ggplot
     # If scales need to be fixed across page_variables force it here
     if( scales %in% c( "fixed", "fixed_x" ) ) {
         x_var_name <- as.character( p$layers[[ 1 ]]$mapping$x )
-        p <- p + scale_x_continuous( limits=c( min( p$data[, x_var_name] ), max( p$data[, x_var_name ] ) ) )
+        p <- p + ggplot2::scale_x_continuous( limits=c( min( p$data[, x_var_name] ), max( p$data[, x_var_name ] ) ) )
     }
     if( scales %in% c( "fixed", "fixed_y" ) ) {
         y_var_name <- as.character( p$layers[[ 1 ]]$mapping$y )
@@ -220,7 +220,7 @@ do_graph <- function(   p,              # a ggplot
             x_var_name <- as.character( p$layers[[ 1 ]]$mapping$x )
             agg_formula <- as.formula( paste( y_var_name,
                 paste( c( x_var_name, page_variables ), collapse="+"), sep="~") )
-            paged_y_values <- aggregate( agg_formula, p$data, FUN=sum )
+            paged_y_values <- stats::aggregate( agg_formula, p$data, FUN=sum )
             y_min <- min( 0, min( paged_y_values[, y_var_name ] ) )
             y_max <- max( paged_y_values[, y_var_name ] )
         }
@@ -228,7 +228,7 @@ do_graph <- function(   p,              # a ggplot
             y_min <- min( p$data[, y_var_name] )
             y_max <- max( p$data[, y_var_name ] )
         }
-        p <- p + scale_y_continuous( limits=c( y_min,  y_max ) )
+        p <- p + ggplot2::scale_y_continuous( limits=c( y_min,  y_max ) )
     }
     
     # This internal function is the d_ply dispatch; it receives data subsets,
@@ -253,7 +253,7 @@ do_graph <- function(   p,              # a ggplot
             # values drawn sperately in different layers. So we must set that
             # up now that we have dsub
             psub$layers[[1]]$data <- subset(dsub, eval(psub$layers[[1]]$mapping$y) >= 0)
-            neg_layer <- geom_bar(data=subset(dsub, eval(psub$layers[[1]]$mapping$y) < 0),
+            neg_layer <- ggplot2::geom_bar(data=subset(dsub, eval(psub$layers[[1]]$mapping$y) < 0),
                 mapping=psub$layers[[1]]$mapping, stat=psub$layers[[1]]$stat)
             psub$layers <- c(psub$layers, neg_layer)
         }
