@@ -143,6 +143,7 @@ UNAGGREGATED_CONSTRAINTS <- c("USA", "Australia_NZ", "Brazil",
                               "Mexico", "Pakistan", "Russia",
                               "South Africa", "South Korea",
                               "Taiwan", "Argentina", "Colombia")
+OMITTED_MARKETS <- c()
 
 NDC_START_YEAR <- 2020
 NDC_END_YEAR <- 2030
@@ -224,7 +225,7 @@ merge(MARKET_MAPPING, AR4_DEMAND_ADJUST) %>%
   mutate(demand.adjust.year = if_else(accounted == 1, NDC_START_YEAR, FIRST_PERIOD_AFTER_NDC_END),
          price.adjust.year = if_else(accounted == 1, NDC_START_YEAR, FIRST_PERIOD_AFTER_NDC_END)) %>% #NOTE: This assumes any gas not specifically addressed is not accounted for. Practically (as of 08/07/19) this only affects CF4 and C2F6
   #na.omit() %>%
-  select_(.dots = LINK_COLS) %>%
+  select(LINK_COLS) %>%
   unique() ->
   individual_linking
 
@@ -239,7 +240,8 @@ merge(MARKET_MAPPING, AR4_DEMAND_ADJUST) %>%
   select("region", "linked-ghg-policy"="linked.ghg.policy", "price-adjust-year"="price.adjust.year",
          "price-adjust"="price.adjust", "demand-adjust-year" = "demand.adjust.year",
          "demand-adjust"="demand.adjust", "market",
-         "linked-policy"="linked.policy", "price-unit"="price.unit", "output-unit"="output.unit") ->
+         "linked-policy"="linked.policy", "price-unit"="price.unit", "output-unit"="output.unit") %>%
+  filter(!market %in% OMITTED_MARKETS) ->
   GHG_linking_file_final
 
 #===========================================================================
@@ -476,7 +478,8 @@ ghg_intens %>%
   select(market, conditional, ndc_rate) ->
   decarbonization_rate
 
-#Join together the GDP and decarbonization rate with the ghg intensity to prepare for calculating by scenario
+#Join together the GDP and decarbonization rate with the ghg intensity to prepare
+# calculating by scenario. Additionally filter out any omitted markets
 NDC_constraints %>%
   select(market, year, conditional, value) %>%
   group_by(market, year, conditional) %>%
@@ -485,7 +488,8 @@ NDC_constraints %>%
   left_join(gdp, by = c("market", "year")) %>%
   left_join(decarbonization_rate, by = c("market", "conditional")) %>%
   left_join(ghg_intens %>% filter(year == 2030) %>% select(market, conditional, ghg_intensity), by = c("market", "conditional")) %>%
-  left_join(MARKET_MAPPING %>% filter(!duplicated(market)) %>% mutate(ghgpolicy = "GHG"), by = "market")->
+  left_join(MARKET_MAPPING %>% filter(!duplicated(market)) %>% mutate(ghgpolicy = "GHG"), by = "market") %>%
+  filter(!market %in% OMITTED_MARKETS) ->
   NDC_commitments
 
 #Calculate cont_ambition (minium 2% decarbonization rate)
@@ -605,18 +609,18 @@ write_header_csv(GHG_linking_file_final, file.path(OUTPUT_DIR, "GHG_link.csv"), 
 
 #Write the outputs as xmls
 #===========================================================================
-EU.15_market <- data.frame(region = "EU-15", ghgpolicy = "GHG", market = "EU")
+shared_markets <- MARKET_MAPPING %>% filter(duplicated(market), !market %in% OMITTED_MARKETS) %>% mutate(ghgpolicy = "GHG") %>% select(region, ghgpolicy, market)
 global_market <- data.frame(region = MARKET_MAPPING$region[!MARKET_MAPPING$region %in% NDC_cont_ambitions_global$region],
                                 ghgpolicy = "GHG",
                                 market = "Global")
 
 create_xml(file.path(OUTPUT_DIR, "NDC_cont_UC.xml")) %>%
   add_xml_data(NDC_cont_ambitions_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_cont_CN.xml")) %>%
   add_xml_data(NDC_cont_ambitions_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_UC.xml")) %>%
   add_xml_data(NDC_cont_ambitions_global_UC, "GHGConstrLong", NULL) %>%
@@ -628,27 +632,27 @@ create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_CN.xml")) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_incr_UC.xml")) %>%
   add_xml_data(NDC_incr_ambitions_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_incr_CN.xml")) %>%
   add_xml_data(NDC_incr_ambitions_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_UC.xml")) %>%
   add_xml_data(NDC_2_deg_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_CN.xml")) %>%
   add_xml_data(NDC_2_deg_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_UC.xml")) %>%
   add_xml_data(NDC_1p5_deg_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_CN.xml")) %>%
   add_xml_data(NDC_1p5_deg_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(EU.15_market, "GHGConstrMkt", NULL) %>%
+  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
   run_xml_conversion()
 
 
