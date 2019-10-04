@@ -1,0 +1,99 @@
+region,market
+USA,USA
+Africa_Eastern,Africa_Eastern
+Africa_Northern,Africa_Northern
+Africa_Southern,Africa_Southern
+Africa_Western,Africa_Western
+Australia_NZ,Australia_NZ
+Brazil,Brazil
+Canada,Canada
+Central America and Caribbean,Central America and Caribbean
+Central Asia,Central Asia
+China,China
+EU-12,EU
+EU-15,EU
+Europe_Eastern,Europe_Eastern
+Europe_Non_EU,Europe_Non_EU
+European Free Trade Association,European Free Trade Association
+India,India
+Indonesia,Indonesia
+Japan,Japan
+Mexico,Mexico
+Middle East,Middle East
+Pakistan,Pakistan
+Russia,Russia
+South Africa,South Africa
+South America_Northern,South America_Northern
+South America_Southern,South America_Southern
+South Asia,South Asia
+South Korea,South Korea
+Southeast Asia,Southeast Asia
+Taiwan,Taiwan
+Argentina,Argentina
+Colombia,Colombia
+AK,USA
+AL,USA
+AR,USA
+AZ,USA
+CA,USA
+CO,USA
+CT,USA
+DC,USA
+DE,USA
+FL,USA
+GA,USA
+HI,USA
+IA,USA
+ID,USA
+IL,USA
+IN,USA
+KS,USA
+KY,USA
+LA,USA
+MA,USA
+MD,USA
+ME,USA
+MI,USA
+MN,USA
+MO,USA
+MS,USA
+MT,USA
+NC,USA
+ND,USA
+NE,USA
+NH,USA
+NJ,USA
+NM,USA
+NV,USA
+NY,USA
+OH,USA
+OK,USA
+OR,USA
+PA,USA
+RI,USA
+SC,USA
+SD,USA
+TN,USA
+TX,USA
+UT,USA
+VA,USA
+VT,USA
+WA,USA
+WI,USA
+WV,USA
+WY,USA
+California grid,USA
+Texas grid,USA
+Southwest grid,USA
+Central East grid,USA
+Central Northeast grid,USA
+Central Southwest grid,USA
+Florida grid,USA
+Mid-Atlantic grid,USA
+Northwest grid,USA
+Southeast grid,USA
+Central Northwest grid,USA
+New York grid,USA
+New England grid,USA
+Alaska grid,USA
+Hawaii grid,USA

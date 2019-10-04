@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+   
+
+	<aQuery>
+       	<region name="USA" />
+       	<region name="Africa_Eastern" />
+       	<region name="Africa_Northern" />
+		<region name="Africa_Southern" />
+		<region name="Africa_Western" />
+       	<region name="Australia_NZ" />
+		<region name="Brazil" />
+       	<region name="Canada" />
+		<region name="Central America and Caribbean" />
+       	<region name="Central Asia" />
+		<region name="China" />
+       	<region name="EU-12" />
+		<region name="EU-15" />
+       	<region name="Europe_Eastern" />
+		<region name="Europe_Non_EU" />
+       	<region name="European Free Trade Association" />
+		<region name="India" />
+       	<region name="Indonesia" />
+		<region name="Japan" />
+       	<region name="Mexico" />
+		<region name="Middle East" />
+       	<region name="Pakistan" />
+		<region name="Russia" />
+       	<region name="South Africa" />
+		<region name="South America_Northern" />
+       	<region name="South America_Southern" />
+		<region name="South Asia" />
+       	<region name="South Korea" />
+		<region name="Southeast Asia" />
+       	<region name="Taiwan" />
+		<region name="Argentina" />
+       	<region name="Colombia" />
+<region name="AK"/>
+<region name="AL"/>
+<region name="AR"/>
+<region name="AZ"/>
+<region name="CA"/>
+<region name="CO"/>
+<region name="CT"/>
+<region name="DC"/>
+<region name="DE"/>
+<region name="FL"/>
+<region name="GA"/>
+<region name="HI"/>
+<region name="IA"/>
+<region name="ID"/>
+<region name="IL"/>
+<region name="IN"/>
+<region name="KS"/>
+<region name="KY"/>
+<region name="LA"/>
+<region name="MA"/>
+<region name="MD"/>
+<region name="ME"/>
+<region name="MI"/>
+<region name="MN"/>
+<region name="MO"/>
+<region name="MS"/>
+<region name="MT"/>
+<region name="NC"/>
+<region name="ND"/>
+<region name="NE"/>
+<region name="NH"/>
+<region name="NJ"/>
+<region name="NM"/>
+<region name="NV"/>
+<region name="NY"/>
+<region name="OH"/>
+<region name="OK"/>
+<region name="OR"/>
+<region name="PA"/>
+<region name="RI"/>
+<region name="SC"/>
+<region name="SD"/>
+<region name="TN"/>
+<region name="TX"/>
+<region name="UT"/>
+<region name="VA"/>
+<region name="VT"/>
+<region name="WA"/>
+<region name="WI"/>
+<region name="WV"/>
+<region name="WY"/>
+
+<gdpQueryBuilder title="GDP MER by region">
+    <axis1 name="region">region</axis1>
+    <axis2 name="Year">gdp-mer</axis2>
+    <xPath buildList="true" dataName="gdp-mer" group="false" sumAll="false">GDP/gdp-mer/text()</xPath>
+    <comments/>
+</gdpQueryBuilder>
+
+
+	</aQuery>
+
+<aQuery>
+       			<region name="USA" />
+       	<region name="Africa_Eastern" />
+       	<region name="Africa_Northern" />
+		<region name="Africa_Southern" />
+		<region name="Africa_Western" />
+       	<region name="Australia_NZ" />
+		<region name="Brazil" />
+       	<region name="Canada" />
+		<region name="Central America and Caribbean" />
+       	<region name="Central Asia" />
+		<region name="China" />
+       	<region name="EU-12" />
+		<region name="EU-15" />
+       	<region name="Europe_Eastern" />
+		<region name="Europe_Non_EU" />
+       	<region name="European Free Trade Association" />
+		<region name="India" />
+       	<region name="Indonesia" />
+		<region name="Japan" />
+       	<region name="Mexico" />
+		<region name="Middle East" />
+       	<region name="Pakistan" />
+		<region name="Russia" />
+       	<region name="South Africa" />
+		<region name="South America_Northern" />
+       	<region name="South America_Southern" />
+		<region name="South Asia" />
+       	<region name="South Korea" />
+		<region name="Southeast Asia" />
+       	<region name="Taiwan" />
+		<region name="Argentina" />
+       	<region name="Colombia" />
+<region name="AK"/>
+<region name="AL"/>
+<region name="AR"/>
+<region name="AZ"/>
+<region name="CA"/>
+<region name="CO"/>
+<region name="CT"/>
+<region name="DC"/>
+<region name="DE"/>
+<region name="FL"/>
+<region name="GA"/>
+<region name="HI"/>
+<region name="IA"/>
+<region name="ID"/>
+<region name="IL"/>
+<region name="IN"/>
+<region name="KS"/>
+<region name="KY"/>
+<region name="LA"/>
+<region name="MA"/>
+<region name="MD"/>
+<region name="ME"/>
+<region name="MI"/>
+<region name="MN"/>
+<region name="MO"/>
+<region name="MS"/>
+<region name="MT"/>
+<region name="NC"/>
+<region name="ND"/>
+<region name="NE"/>
+<region name="NH"/>
+<region name="NJ"/>
+<region name="NM"/>
+<region name="NV"/>
+<region name="NY"/>
+<region name="OH"/>
+<region name="OK"/>
+<region name="OR"/>
+<region name="PA"/>
+<region name="RI"/>
+<region name="SC"/>
+<region name="SD"/>
+<region name="TN"/>
+<region name="TX"/>
+<region name="UT"/>
+<region name="VA"/>
+<region name="VT"/>
+<region name="WA"/>
+<region name="WI"/>
+<region name="WV"/>
+<region name="WY"/>
+<region name="California grid"/>
+<region name="Texas grid"/>
+<region name="Southwest grid"/>
+<region name="Central East grid"/>
+<region name="Central Northeast grid"/>
+<region name="Central Southwest grid"/>
+<region name="Florida grid"/>
+<region name="Mid-Atlantic grid"/>
+<region name="Northwest grid"/>
+<region name="Southeast grid"/>
+<region name="Central Northwest grid"/>
+<region name="New York grid"/>
+<region name="New England grid"/>
+<region name="Alaska grid"/>
+<region name="Hawaii grid"/>
+
+		<emissionsQueryBuilder title="nonCO2 emissions by region">
+    			<axis1 name="GHG">GHG</axis1>
+    			<axis2 name="Year">emissions</axis2>
+    			<xPath buildList="true" dataName="emissions" group="false" sumAll="false">*[@type = 'sector' (:collapse:) or @type = 'resource' (:collapse:)]//
+            		*[@type = 'GHG']/emissions/node()</xPath>
+    			<comments/>
+		</emissionsQueryBuilder>
+	</aQuery>
+
+
+	<aQuery>
+       	<region name="USA" />
+       	<region name="Africa_Eastern" />
+       	<region name="Africa_Northern" />
+		<region name="Africa_Southern" />
+		<region name="Africa_Western" />
+       	<region name="Australia_NZ" />
+		<region name="Brazil" />
+       	<region name="Canada" />
+		<region name="Central America and Caribbean" />
+       	<region name="Central Asia" />
+		<region name="China" />
+       	<region name="EU-12" />
+		<region name="EU-15" />
+       	<region name="Europe_Eastern" />
+		<region name="Europe_Non_EU" />
+       	<region name="European Free Trade Association" />
+		<region name="India" />
+       	<region name="Indonesia" />
+		<region name="Japan" />
+       	<region name="Mexico" />
+		<region name="Middle East" />
+       	<region name="Pakistan" />
+		<region name="Russia" />
+       	<region name="South Africa" />
+		<region name="South America_Northern" />
+       	<region name="South America_Southern" />
+		<region name="South Asia" />
+       	<region name="South Korea" />
+		<region name="Southeast Asia" />
+       	<region name="Taiwan" />
+		<region name="Argentina" />
+       	<region name="Colombia" />
+<region name="AK"/>
+<region name="AL"/>
+<region name="AR"/>
+<region name="AZ"/>
+<region name="CA"/>
+<region name="CO"/>
+<region name="CT"/>
+<region name="DC"/>
+<region name="DE"/>
+<region name="FL"/>
+<region name="GA"/>
+<region name="HI"/>
+<region name="IA"/>
+<region name="ID"/>
+<region name="IL"/>
+<region name="IN"/>
+<region name="KS"/>
+<region name="KY"/>
+<region name="LA"/>
+<region name="MA"/>
+<region name="MD"/>
+<region name="ME"/>
+<region name="MI"/>
+<region name="MN"/>
+<region name="MO"/>
+<region name="MS"/>
+<region name="MT"/>
+<region name="NC"/>
+<region name="ND"/>
+<region name="NE"/>
+<region name="NH"/>
+<region name="NJ"/>
+<region name="NM"/>
+<region name="NV"/>
+<region name="NY"/>
+<region name="OH"/>
+<region name="OK"/>
+<region name="OR"/>
+<region name="PA"/>
+<region name="RI"/>
+<region name="SC"/>
+<region name="SD"/>
+<region name="TN"/>
+<region name="TX"/>
+<region name="UT"/>
+<region name="VA"/>
+<region name="VT"/>
+<region name="WA"/>
+<region name="WI"/>
+<region name="WV"/>
+<region name="WY"/>
+<region name="California grid"/>
+<region name="Texas grid"/>
+<region name="Southwest grid"/>
+<region name="Central East grid"/>
+<region name="Central Northeast grid"/>
+<region name="Central Southwest grid"/>
+<region name="Florida grid"/>
+<region name="Mid-Atlantic grid"/>
+<region name="Northwest grid"/>
+<region name="Southeast grid"/>
+<region name="Central Northwest grid"/>
+<region name="New York grid"/>
+<region name="New England grid"/>
+<region name="Alaska grid"/>
+<region name="Hawaii grid"/>
+
+	<query title="LUC emissions by region">
+    <axis1 name="LandLeaf">LandLeaf</axis1>
+    <axis2 name="Year">land-use-change-emission[@year]</axis2>
+    <xPath buildList="true" dataName="land-use-change-emission"
+        group="false" sumAll="true">/LandNode[@name='root' or @type='LandNode' (:collapse:)]//
+                land-use-change-emission[@year&gt;1970]/text()</xPath>
+    <comments/>
+</query>
+
+	</aQuery>
+
+
+
+</queries>
