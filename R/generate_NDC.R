@@ -84,33 +84,6 @@
 
 datestamp <- gsub("-", "_", Sys.Date())
 
-#
-# Read defined command-line args and return bindings in a named list.
-#
-parseArgs <- function() {
-  # Create a parser
-  p <- argparser::arg_parser("Model Interface Template query processor")
-
-  p <- argparser::add_argument(p, "--files", nargs=Inf,
-                    help="The CSV (query result) files to process")
-
-  p <- argparser::add_argument(p, "--logLevel", default=1,
-                    help="Set level of diagnostic log messages: 0=None, 1=Errors, 2=Summary, 3=Detail, 4=Debug")
-
-  p <- argparser::add_argument(p, "--scriptDir", default=".",
-                    help="The directory in which the scripts and mappings directories are found")
-
-  # just an example...
-  p <- argparser::add_argument(p, '--debug', flag=TRUE, default=FALSE,
-                    help="Print diagnostic messages")
-
-  # Parse and return the command line arguments
-  argv <- argparser::parse_args(p)
-  return(argv)
-}
-
-args = parseArgs()
-
 loadScripts <- function(names) {
   for (name in names) {
     pathname = file.path("R", "scripts", name)
@@ -120,12 +93,8 @@ loadScripts <- function(names) {
 # Load all support functions into memory
 loadScripts(c("diag_header.R",             # configuration and helper functions
               "diag_parser.R",             # parser to read "ModelInterface" style CSVs
-              "diag_grapher.R",            # functions to generate figures
-              "color_schemes.R",           # some predefined color schemes
               "diag_util_functions.R",     # useful utility functions
               "GHG_CO2e.R"))               # converter for GHGs to their CO2e values
-
-LOGLEVEL = args$logLevel
 #===========================================================================
 
 #Establish constants
@@ -614,52 +583,52 @@ global_market <- data.frame(region = MARKET_MAPPING$region[!MARKET_MAPPING$regio
                                 ghgpolicy = "GHG",
                                 market = "Global")
 
-create_xml(file.path(OUTPUT_DIR, "NDC_cont_UC.xml")) %>%
-  add_xml_data(NDC_cont_ambitions_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_cont_CN.xml")) %>%
-  add_xml_data(NDC_cont_ambitions_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_UC.xml")) %>%
-  add_xml_data(NDC_cont_ambitions_global_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(global_market, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_CN.xml")) %>%
-  add_xml_data(NDC_cont_ambitions_global_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(global_market, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_incr_UC.xml")) %>%
-  add_xml_data(NDC_incr_ambitions_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_incr_CN.xml")) %>%
-  add_xml_data(NDC_incr_ambitions_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_UC.xml")) %>%
-  add_xml_data(NDC_2_deg_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_CN.xml")) %>%
-  add_xml_data(NDC_2_deg_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_UC.xml")) %>%
-  add_xml_data(NDC_1p5_deg_UC, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_CN.xml")) %>%
-  add_xml_data(NDC_1p5_deg_CN, "GHGConstrLong", NULL) %>%
-  add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
-  run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_cont_UC.xml")) %>%
+  gcamdata::add_xml_data(NDC_cont_ambitions_UC, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_cont_CN.xml")) %>%
+  gcamdata::add_xml_data(NDC_cont_ambitions_CN, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_UC.xml")) %>%
+  gcamdata::add_xml_data(NDC_cont_ambitions_global_UC, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(global_market, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_cont_global_CN.xml")) %>%
+  gcamdata::add_xml_data(NDC_cont_ambitions_global_CN, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(global_market, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_incr_UC.xml")) %>%
+  gcamdata::add_xml_data(NDC_incr_ambitions_UC, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_incr_CN.xml")) %>%
+  gcamdata::add_xml_data(NDC_incr_ambitions_CN, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_UC.xml")) %>%
+  gcamdata::add_xml_data(NDC_2_deg_UC, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_2_deg_CN.xml")) %>%
+  gcamdata::add_xml_data(NDC_2_deg_CN, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_UC.xml")) %>%
+  gcamdata::add_xml_data(NDC_1p5_deg_UC, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "NDC_1p5_deg_CN.xml")) %>%
+  gcamdata::add_xml_data(NDC_1p5_deg_CN, "GHGConstrLong", NULL) %>%
+  gcamdata::add_xml_data(shared_markets, "GHGConstrMkt", NULL) %>%
+  gcamdata::run_xml_conversion()
 
 
-create_xml(file.path(OUTPUT_DIR, "GHG_link.xml")) %>%
-  add_xml_data(GHG_linking_file_final, "GHGLink_start", NULL) %>%
-  run_xml_conversion()
-create_xml(file.path(OUTPUT_DIR, "GHG_link_global.xml")) %>%
-  add_xml_data(GHG_linking_file_final %>% mutate(market = "Global"), "GHGLink_start", NULL) %>%
-  run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "GHG_link.xml")) %>%
+  gcamdata::add_xml_data(GHG_linking_file_final, "GHGLink_start", NULL) %>%
+  gcamdata::run_xml_conversion()
+gcamdata::create_xml(file.path(OUTPUT_DIR, "GHG_link_global.xml")) %>%
+  gcamdata::add_xml_data(GHG_linking_file_final %>% mutate(market = "Global"), "GHGLink_start", NULL) %>%
+  gcamdata::run_xml_conversion()
 #===========================================================================
