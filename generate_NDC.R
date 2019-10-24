@@ -86,7 +86,7 @@ datestamp <- gsub("-", "_", Sys.Date())
 
 loadScripts <- function(names) {
   for (name in names) {
-    pathname = file.path("R", "scripts", name)
+    pathname = file.path("R", name)
     source(pathname)
   }
 }
