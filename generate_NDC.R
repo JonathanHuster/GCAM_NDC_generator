@@ -1,24 +1,3 @@
-#' Read in a query from a GCAM run and establish NDC constraints with the fed in emissions as
-#' a baseline.
-#'
-#' The input should be .csv results of the query within the 
-#' package (/data/queries/batch_query_NDC.xml). 
-#'
-#' The output will be a set of XMLs with varying constraints and linking files:
-#'
-#'
-#' @param NDC_QUERY The globally averaged data
-#' @return Set of XML constraint/linking files
-#' argparser argparser add_argument parse_args parse_args
-#' @importFrom assertthat assert_that
-#' @importFrom dplyr filter bind_cols mutate select select_ pull rename group_by ungroup summarise if_else left_join inner_join arrange %>%
-#' @importFrom tidyr gather spread
-#' @importFrom gcamdata create_xml add_xml_data run_xml_conversion
-#' @export 
-#'
-
-
-
 #==================================================================================
 #!/usr/bin/env Rscript
 #
