@@ -1,11 +1,5 @@
-
-GHGConstr,world/+{name}region,region/+{name}ghgpolicy,ghgpolicy/+market,ghgpolicy/+{year=2020}constraint,ghgpolicy/+{year=2025}constraint,ghgpolicy/+{year=2030}constraint,ghgpolicy/+{year=2035}constraint,ghgpolicy/+{year=2040}constraint,ghgpolicy/+{year=2045}constraint,ghgpolicy/+{year=2050}constraint,ghgpolicy/+{year=2055}constraint,ghgpolicy/+{year=2060}constraint,ghgpolicy/+{year=2065}constraint,ghgpolicy/+{year=2070}constraint,ghgpolicy/+{year=2075}constraint,ghgpolicy/+{year=2080}constraint,ghgpolicy/+{year=2085}constraint,ghgpolicy/+{year=2090}constraint,ghgpolicy/+{year=2095}constraint,ghgpolicy/+{year=2100}constraint,scenario,scenario/world,world/region
-
 GHGConstrMkt,world/+{name}region,region/+{name}ghgpolicy,ghgpolicy/+market,scenario,scenario/world,world/region
 
 GHGConstrLong,world/+{name}region,region/+{name}ghgpolicy,ghgpolicy/+market,ghgpolicy/+{year}constraint,ghgpolicy/+constraint,scenario,scenario/world,world/region
-
-
-GHGLink,world/+{name}region,region/+{name}linked-ghg-policy,linked-ghg-policy/+{fillout=1;year=2020}price-adjust,linked-ghg-policy/+{fillout=1;year=2020}demand-adjust,linked-ghg-policy/+market,linked-ghg-policy/+linked-policy,linked-ghg-policy/+price-unit,linked-ghg-policy/+output-unit,scenario,scenario/world,world/region
 
 GHGLink_start,world/+{name}region,region/+{name}linked-ghg-policy,linked-ghg-policy/+{fillout=1;year}price-adjust,linked-ghg-policy/+price-adjust,linked-ghg-policy/+{fillout=1;year}demand-adjust,linked-ghg-policy/+demand-adjust,linked-ghg-policy/+market,linked-ghg-policy/+linked-policy,linked-ghg-policy/+price-unit,linked-ghg-policy/+output-unit,scenario,scenario/world,world/region

@@ -1,24 +1,3 @@
-#' Read in a query from a GCAM run and establish NDC constraints with the fed in emissions as
-#' a baseline.
-#'
-#' The input should be .csv results of the query within the 
-#' package (/data/queries/batch_query_NDC.xml). 
-#'
-#' The output will be a set of XMLs with varying constraints and linking files:
-#'
-#'
-#' @param NDC_QUERY The globally averaged data
-#' @return Set of XML constraint/linking files
-#' argparser argparser add_argument parse_args parse_args
-#' @importFrom assertthat assert_that
-#' @importFrom dplyr filter bind_cols mutate select select_ pull rename group_by ungroup summarise if_else left_join inner_join arrange %>%
-#' @importFrom tidyr gather spread
-#' @importFrom gcamdata create_xml add_xml_data run_xml_conversion
-#' @export 
-#'
-
-
-
 #==================================================================================
 #!/usr/bin/env Rscript
 #
@@ -86,7 +65,7 @@ datestamp <- gsub("-", "_", Sys.Date())
 
 loadScripts <- function(names) {
   for (name in names) {
-    pathname = file.path("R", "scripts", name)
+    pathname = file.path("R", name)
     source(pathname)
   }
 }
@@ -187,7 +166,17 @@ INDC_DATA %>%
   mutate(accounted = if_else(is.na(accounted), 0, as.double(accounted)))->
   NDC_link_data
 
-#Individual (or small aggregates such as australia_nz) specifiy which gases and/or LUC emissions to omit
+#We get warning messages if we don't feed in a linking file for all periods, but we want to allow
+#individual (or small aggregates such as australia_nz) to specifiy which gases and/or LUC emissions to omit
+#We'll set all linkings to 0 then have the actual values read in by region in later periods to overwrite specific gases
+ZEROED_AR4_DEMAND_ADJUST <- AR4_DEMAND_ADJUST %>% mutate(price.adjust = 0, demand.adjust = 0)
+
+merge(MARKET_MAPPING, ZEROED_AR4_DEMAND_ADJUST) %>%
+  mutate(price.adjust.year = 1975,
+         demand.adjust.year = 1975) %>%
+  select(LINK_COLS) ->
+  baseline_linking
+
 merge(MARKET_MAPPING, AR4_DEMAND_ADJUST) %>%
   left_join(GHG_GROUP_MAPPING, by = "linked.ghg.policy")%>%
   inner_join(NDC_link_data %>% filter(market %in% UNAGGREGATED_CONSTRAINTS), by = c("group", region = "GCAM_region", "market")) %>%
@@ -201,9 +190,11 @@ merge(MARKET_MAPPING, AR4_DEMAND_ADJUST) %>%
 #All other regions are assumed to limit all GHGs and LUC emissions
 merge(MARKET_MAPPING, AR4_DEMAND_ADJUST) %>%
   filter(!region %in% individual_linking$region) %>%
-  mutate(price.adjust.year = 2020,
-         demand.adjust.year = 2020) %>%
-  bind_rows(individual_linking) %>%
+  mutate(price.adjust.year = NDC_START_YEAR,
+         demand.adjust.year = NDC_START_YEAR) ->
+  aggregate_linking
+
+bind_rows(baseline_linking, individual_linking, aggregate_linking) %>%
   unique() %>%
   arrange(region) %>%
   select("region", "linked-ghg-policy"="linked.ghg.policy", "price-adjust-year"="price.adjust.year",
@@ -565,15 +556,15 @@ NDC_1p5_deg_CN <- filter(NDC_1p5_deg, conditional == "constraint_CN") %>% select
 
 #Write the outputs as csvs
 #===========================================================================
-write_const_csv(NDC_cont_ambitions_UC, file.path(OUTPUT_DIR, "NDC_cont_UC.csv"), row.names = FALSE)
-write_const_csv(NDC_cont_ambitions_CN, file.path(OUTPUT_DIR, "NDC_cont_CN.csv"), row.names = FALSE)
-write_const_csv(NDC_incr_ambitions_UC, file.path(OUTPUT_DIR, "NDC_incr_UC.csv"), row.names = FALSE)
-write_const_csv(NDC_incr_ambitions_CN, file.path(OUTPUT_DIR, "NDC_incr_CN.csv"), row.names = FALSE)
-write_const_csv(NDC_2_deg_UC, file.path(OUTPUT_DIR, "NDC_2deg_UC.csv"), row.names = FALSE)
-write_const_csv(NDC_2_deg_CN, file.path(OUTPUT_DIR, "NDC_2deg_CN.csv"), row.names = FALSE)
-write_const_csv(NDC_1p5_deg_UC, file.path(OUTPUT_DIR, "NDC_1p5deg_UC.csv"), row.names = FALSE)
-write_const_csv(NDC_1p5_deg_CN, file.path(OUTPUT_DIR, "NDC_1p5deg_CN.csv"), row.names = FALSE)
-write_header_csv(GHG_linking_file_final, file.path(OUTPUT_DIR, "GHG_link.csv"), LINK_FILE_HEADER, row.names = FALSE)
+# write_const_csv(NDC_cont_ambitions_UC, file.path(OUTPUT_DIR, "NDC_cont_UC.csv"), row.names = FALSE)
+# write_const_csv(NDC_cont_ambitions_CN, file.path(OUTPUT_DIR, "NDC_cont_CN.csv"), row.names = FALSE)
+# write_const_csv(NDC_incr_ambitions_UC, file.path(OUTPUT_DIR, "NDC_incr_UC.csv"), row.names = FALSE)
+# write_const_csv(NDC_incr_ambitions_CN, file.path(OUTPUT_DIR, "NDC_incr_CN.csv"), row.names = FALSE)
+# write_const_csv(NDC_2_deg_UC, file.path(OUTPUT_DIR, "NDC_2deg_UC.csv"), row.names = FALSE)
+# write_const_csv(NDC_2_deg_CN, file.path(OUTPUT_DIR, "NDC_2deg_CN.csv"), row.names = FALSE)
+# write_const_csv(NDC_1p5_deg_UC, file.path(OUTPUT_DIR, "NDC_1p5deg_UC.csv"), row.names = FALSE)
+# write_const_csv(NDC_1p5_deg_CN, file.path(OUTPUT_DIR, "NDC_1p5deg_CN.csv"), row.names = FALSE)
+# write_header_csv(GHG_linking_file_final, file.path(OUTPUT_DIR, "GHG_link.csv"), LINK_FILE_HEADER, row.names = FALSE)
 #===========================================================================
 
 #Write the outputs as xmls
